@@ -4,7 +4,7 @@ import glob,os.path,re,json
 # 텍스트를 읽어 들이고 출현 빈도 조사하기
 def check_freq(fname):
     name = os.path.basename(fname)
-    lang = re.match(r'^[a-z]{2,}',name).group()
+    lang = re.match(r'^[a-z]{2,}',name).group()  # 정규 표현식( 파일 이름 앞의 두문자가 언어 코드고 이를 기반으로 언어 ID를 추출)
     with open(fname,"r",encoding="utf-8") as f:
         text = f.read()
     text = text.lower() # 소문자로 변환
